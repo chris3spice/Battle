@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Chaomon" load_steps=2 format=3 uid="uid://0tjne4keu5mi"]
+
+[ext_resource type="Script" path="res://Resources/chaomon.gd" id="1_tj7sq"]
+
+[resource]
+script = ExtResource("1_tj7sq")
+chaomon_name = "Flyguy"
+chaomon_speed = 5.0

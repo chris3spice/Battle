@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwa5fvvo4orjg"]
+
+[ext_resource type="PackedScene" uid="uid://igfcg6lvuxvf" path="res://ATBBattle/atb_unit.tscn" id="1_i87oo"]
+[ext_resource type="Resource" uid="uid://bfu7qltadg5xv" path="res://Resources/Chaomon/Chaomon2.tres" id="2_j5auq"]
+
+[node name="ATBBattle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lines" type="Node" parent="."]
+
+[node name="Line2D" type="Line2D" parent="Lines"]
+points = PackedVector2Array(64, 320, 576, 320)
+
+[node name="Line2D2" type="Line2D" parent="Lines"]
+points = PackedVector2Array(448, 312, 448, 328)
+
+[node name="Line2D3" type="Line2D" parent="Lines"]
+points = PackedVector2Array(512, 312, 512, 328)
+
+[node name="Line2D4" type="Line2D" parent="Lines"]
+points = PackedVector2Array(576, 312, 576, 328)
+
+[node name="ATBUnit" parent="." instance=ExtResource("1_i87oo")]
+
+[node name="ATBUnit2" parent="." instance=ExtResource("1_i87oo")]
+battle_unit = ExtResource("2_j5auq")
