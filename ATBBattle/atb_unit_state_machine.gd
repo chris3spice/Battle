@@ -3,7 +3,6 @@ extends Node
 #STATES
 @export var initial_state : ATBState
 var current_state : ATBState
-var previous_state : ATBState
 var states : Dictionary = {}
 
 #TIMER
@@ -13,8 +12,8 @@ var states : Dictionary = {}
 var is_paused : bool = false
 
 func _ready() -> void:
-	BattleManager.pause.connect(pause)
-	BattleManager.unpause.connect(pause)
+	BattleManager.pause.connect(_pause) #Connect to BattleManager global pause
+	BattleManager.unpause.connect(_unpause) #Connect to BattleManager global unpause
 	timer.connect("timeout", _timeout) #Connect to the timer
 	for child in get_children(): #Loop through the nodes
 		if child is ATBState: #If a node is a state
@@ -52,7 +51,6 @@ func _on_child_transition(state, new_state_name):
 	current_state = new_state #Change current state to the new state
 
 func _timeout():
-	previous_state = current_state
 	match current_state:
 		states.waiting:
 			print("done waiting")
@@ -64,8 +62,8 @@ func _timeout():
 			print("done recovering")
 			current_state.transition.emit(current_state, "waiting")
 		
-func pause():
+func _pause():
 	timer.paused = true
 	
-func unpause():
+func _unpause():
 	timer.paused = false

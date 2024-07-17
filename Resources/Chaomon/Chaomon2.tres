@@ -1,8 +1,11 @@
-[gd_resource type="Resource" script_class="Chaomon" load_steps=2 format=3 uid="uid://bfu7qltadg5xv"]
+[gd_resource type="Resource" script_class="Chaomon" load_steps=3 format=3 uid="uid://bfu7qltadg5xv"]
 
+[ext_resource type="Resource" uid="uid://hfu5yfowiomv" path="res://Resources/Moves/tackle.tres" id="1_3ic4l"]
 [ext_resource type="Script" path="res://Resources/chaomon.gd" id="1_10fpn"]
 
 [resource]
 script = ExtResource("1_10fpn")
+is_player = false
 chaomon_name = "Flyguy"
 chaomon_speed = 10.0
+chaomon_moveset = [ExtResource("1_3ic4l")]

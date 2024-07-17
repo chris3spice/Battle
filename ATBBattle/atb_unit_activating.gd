@@ -22,5 +22,6 @@ func update(delta):
 	icon.position.y = choice.position.y
 
 func enter():
+	print("Activating")
 	timer.wait_time = atb_unit.move_selected.move_activation_time
 	timer.start()
