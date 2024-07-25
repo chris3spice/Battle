@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Action" load_steps=2 format=3 uid="uid://bec6sj52nvdir"]
+
+[ext_resource type="Script" path="res://Resources/action.gd" id="1_y67d7"]
+
+[resource]
+script = ExtResource("1_y67d7")
+action_name = "Slap"
+action_power = 5
+action_fatigue = 0.0

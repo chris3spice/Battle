@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="Move" load_steps=2 format=3 uid="uid://hfu5yfowiomv"]
+[gd_resource type="Resource" script_class="Action" load_steps=2 format=3 uid="uid://c7qvtnh7q24ft"]
 
-[ext_resource type="Script" path="res://Resources/move.gd" id="1_g1mdy"]
+[ext_resource type="Script" path="res://Resources/action.gd" id="1_wd0ep"]
 
 [resource]
-script = ExtResource("1_g1mdy")
-move_name = "Tackle"
-move_activation_time = 3.0
-move_recovery_time = 6.0
+script = ExtResource("1_wd0ep")
+action_name = "Tackle"
+action_power = 5
+action_fatigue = 1.0

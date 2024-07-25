@@ -1,0 +1,186 @@
+[gd_scene load_steps=15 format=3 uid="uid://bfl2gj0eytkva"]
+
+[ext_resource type="Script" path="res://Battle/battle.gd" id="1_4eojs"]
+[ext_resource type="Texture2D" uid="uid://c4wwv581mp10y" path="res://Battle/Backgrounds/battleback1.png" id="2_eiso6"]
+[ext_resource type="Resource" uid="uid://ctmxdjw8vdsa2" path="res://Resources/Chaomon/Flymon.tres" id="3_se3x3"]
+[ext_resource type="Resource" uid="uid://bv0dvhgasqxln" path="res://Resources/Chaomon/Grounmon.tres" id="4_133bd"]
+[ext_resource type="Script" path="res://Battle/battler_container.gd" id="5_vcaxq"]
+[ext_resource type="Script" path="res://Battle/UITurnBar/ui_turn_bar.gd" id="6_4hcjf"]
+[ext_resource type="Texture2D" uid="uid://d0n18hsdkvy7x" path="res://Battle/UITurnBar/turn_bar_bg.png" id="7_s4wc2"]
+[ext_resource type="Texture2D" uid="uid://dvxdygf7dob62" path="res://Battle/UIActionMenu/menu_action_bg.png" id="8_7j8fs"]
+[ext_resource type="Script" path="res://Battle/ui_menu.gd" id="8_dn4iq"]
+[ext_resource type="Texture2D" uid="uid://00hiqoqn6roo" path="res://Battle/UIActionMenu/menu_action_bg_pressed.png" id="9_8scsk"]
+[ext_resource type="Texture2D" uid="uid://cdtu5jfqp3hbk" path="res://Battle/UIActionMenu/menu_action_bg_disabled.png" id="10_hcvl8"]
+[ext_resource type="Texture2D" uid="uid://ba077ftlyptyb" path="res://Battle/UIActionMenu/menu_action_bg_focused.png" id="11_l8b0u"]
+[ext_resource type="PackedScene" uid="uid://b2173rcm7jhtq" path="res://Battle/UIActionMenu/ui_action_list.tscn" id="13_w4h7r"]
+[ext_resource type="Script" path="res://Battle/UIBattlerHUD/ui_battler_hud.gd" id="14_r1ai7"]
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_4eojs")
+background = ExtResource("2_eiso6")
+player_chaomon = ExtResource("3_se3x3")
+opponent_chaomon = ExtResource("4_133bd")
+
+[node name="PlayerPos" type="Marker2D" parent="."]
+position = Vector2(256, 448)
+
+[node name="OpponentPos" type="Marker2D" parent="."]
+position = Vector2(1024, 448)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -15
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BattlerContainer" type="Node2D" parent="."]
+script = ExtResource("5_vcaxq")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UITurnBar" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_4hcjf")
+
+[node name="Background" type="TextureRect" parent="UI/UITurnBar"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 1152.0
+offset_bottom = 88.0
+texture = ExtResource("7_s4wc2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="UIMenu" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("8_dn4iq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/UIMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Moves" type="TextureButton" parent="UI/UIMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("8_7j8fs")
+texture_pressed = ExtResource("9_8scsk")
+texture_disabled = ExtResource("10_hcvl8")
+texture_focused = ExtResource("11_l8b0u")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="UI/UIMenu/HBoxContainer/Moves"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "MOVES"
+
+[node name="Items" type="TextureButton" parent="UI/UIMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("8_7j8fs")
+texture_pressed = ExtResource("9_8scsk")
+texture_disabled = ExtResource("10_hcvl8")
+texture_focused = ExtResource("11_l8b0u")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="UI/UIMenu/HBoxContainer/Items"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "ITEMS"
+
+[node name="Flee" type="TextureButton" parent="UI/UIMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("8_7j8fs")
+texture_pressed = ExtResource("9_8scsk")
+texture_disabled = ExtResource("10_hcvl8")
+texture_focused = ExtResource("11_l8b0u")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="UI/UIMenu/HBoxContainer/Flee"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "FLEE"
+
+[node name="UIActionList" parent="UI/UIMenu" instance=ExtResource("13_w4h7r")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = -3.16667
+anchor_right = 0.65
+anchor_bottom = -0.5
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="UIBattlerHUD" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_r1ai7")
+
+[node name="OpponentHUD" type="Marker2D" parent="UI/UIBattlerHUD"]
+position = Vector2(128, 128)
+
+[node name="PlayerHUD" type="Marker2D" parent="UI/UIBattlerHUD"]
+position = Vector2(896, 128)
+
+[connection signal="pressed" from="UI/UIMenu/HBoxContainer/Moves" to="UI/UIMenu" method="_on_moves_pressed"]
+[connection signal="pressed" from="UI/UIMenu/HBoxContainer/Items" to="UI/UIMenu" method="_on_items_pressed"]

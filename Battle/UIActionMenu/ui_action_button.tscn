@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgqpyskaeyy8o"]
+
+[ext_resource type="Texture2D" uid="uid://dvxdygf7dob62" path="res://Battle/UIActionMenu/menu_action_bg.png" id="1_qc4er"]
+[ext_resource type="Texture2D" uid="uid://00hiqoqn6roo" path="res://Battle/UIActionMenu/menu_action_bg_pressed.png" id="2_aguqs"]
+[ext_resource type="Texture2D" uid="uid://cdtu5jfqp3hbk" path="res://Battle/UIActionMenu/menu_action_bg_disabled.png" id="3_4j6tx"]
+[ext_resource type="Texture2D" uid="uid://ba077ftlyptyb" path="res://Battle/UIActionMenu/menu_action_bg_focused.png" id="4_vgahx"]
+[ext_resource type="Script" path="res://Battle/UIActionMenu/ui_action_button.gd" id="5_3md0j"]
+
+[node name="UIActionButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_qc4er")
+texture_pressed = ExtResource("2_aguqs")
+texture_disabled = ExtResource("3_4j6tx")
+texture_focused = ExtResource("4_vgahx")
+script = ExtResource("5_3md0j")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+anchor_left = 0.0479042
+anchor_top = 0.166667
+anchor_right = 0.958084
+anchor_bottom = 0.833333
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "ACTION"
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Chaomon" load_steps=4 format=3 uid="uid://bv0dvhgasqxln"]
+
+[ext_resource type="Script" path="res://Resources/chaomon.gd" id="1_1fmnc"]
+[ext_resource type="Resource" uid="uid://c7qvtnh7q24ft" path="res://Resources/Moves/tackle.tres" id="1_yhpkc"]
+[ext_resource type="Texture2D" uid="uid://dmmcvwvf02qyg" path="res://icon.svg" id="2_u2mwf"]
+
+[resource]
+script = ExtResource("1_1fmnc")
+is_player = false
+chaomon_texture = ExtResource("2_u2mwf")
+chaomon_name = "Grounmon"
+chaomon_type = 0
+base_speed = 40
+action_list = [ExtResource("1_yhpkc")]
+max_health = 0
+current_health = 0
+acv = 8
+dcv = 8

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Chaomon" load_steps=5 format=3 uid="uid://ctmxdjw8vdsa2"]
+
+[ext_resource type="Resource" uid="uid://c7qvtnh7q24ft" path="res://Resources/Moves/tackle.tres" id="1_rj0fo"]
+[ext_resource type="Script" path="res://Resources/chaomon.gd" id="1_y8jxb"]
+[ext_resource type="Resource" uid="uid://bec6sj52nvdir" path="res://Resources/Moves/slap.tres" id="2_ljds0"]
+[ext_resource type="Texture2D" uid="uid://dmmcvwvf02qyg" path="res://icon.svg" id="3_242c6"]
+
+[resource]
+script = ExtResource("1_y8jxb")
+is_player = true
+chaomon_texture = ExtResource("3_242c6")
+chaomon_name = "Flymon"
+chaomon_type = 0
+base_speed = 60
+action_list = [ExtResource("1_rj0fo"), ExtResource("2_ljds0")]
+max_health = 0
+current_health = 0
+acv = 10
+dcv = 10

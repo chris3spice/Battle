@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh2jxdtp4d2pw"]
+
+[ext_resource type="Texture2D" uid="uid://cahbutm6ao4nt" path="res://Battle/UITurnBar/portrait_bg_player.png" id="1_8vw7u"]
+[ext_resource type="Script" path="res://Battle/UITurnBar/ui_battler_icon.gd" id="1_lpeg4"]
+
+[node name="UIBattlerIcon" type="TextureRect"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -68.0
+offset_right = 132.0
+offset_bottom = 68.0
+grow_vertical = 2
+texture = ExtResource("1_8vw7u")
+stretch_mode = 3
+script = ExtResource("1_lpeg4")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_left = 0.242424
+anchor_top = 0.235294
+anchor_right = 0.787879
+anchor_bottom = 0.764706
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true

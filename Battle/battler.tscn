@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://0naglemjo40v"]
+
+[ext_resource type="Script" path="res://Battle/battler.gd" id="1_uu0rk"]
+
+[node name="Battler" type="Node2D"]
+position = Vector2(256, 448)
+script = ExtResource("1_uu0rk")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -64)
