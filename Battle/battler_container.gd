@@ -36,7 +36,7 @@ func _play_turn(battler: Battler):
 	else: #Opponent AI Turn
 		is_player_turn = false
 		#Just pick action randomly
-		BattleManager.action_chosen.emit(battle.opponent_chaomon.action_list.pick_random())
+		BattleManager.action_chosen.emit(battler.battler_resource.action_list.pick_random())
 
 func _action_chosen(action):
 	var formulas = Formulas.new() #Create instance of the formulas for use
